@@ -1,0 +1,260 @@
+.step-section {
+  margin-top: 200px;
+}
+
+.step-section__title {
+  position: relative;
+  display: flex;
+}
+
+.step-section__title span {
+  position: absolute;
+  font-family: var(--font-family);
+  text-transform: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #3057a2;
+  max-width: 291px;
+  bottom: 9px;
+  left: 295px;
+}
+
+.step-section__blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "a b c"
+    "d e c"
+    "f g g";
+  grid-gap: 20px;
+  margin-top: 55px;
+}
+
+.step-section__block {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 29px;
+  background: url(../../assets/images/steps/step-bg.png) no-repeat;
+  background-size: cover;
+  padding: 20px 20px 20px 33px;
+}
+
+.step-section__number {
+  position: relative;
+  height: fit-content;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+}
+
+.step-section__number span {
+  position: relative;
+  z-index: 2;
+  top: 7px;
+}
+
+.step-section__number::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 60px;
+  width: 36px;
+  height: 36px;
+  z-index: 1;
+}
+
+.step-section__text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+}
+
+.step-section__plane {
+  position: absolute;
+  right: -40px;
+  bottom: -37px;
+}
+
+.step-section__block:nth-child(1) {
+  grid-area: a;
+}
+
+.step-section__block:nth-child(2) {
+  grid-area: b;
+}
+
+.step-section__block:nth-child(3) {
+  grid-area: c;
+}
+
+.step-section__block:nth-child(4) {
+  grid-area: d;
+}
+
+.step-section__block:nth-child(5) {
+  grid-area: e;
+}
+
+.step-section__block:nth-child(6) {
+  grid-area: f;
+}
+
+.step-section__block:nth-child(7) {
+  grid-area: g;
+}
+
+.step-section__block:nth-child(7) span {
+  display: flex;
+  max-width: 446px;
+}
+
+
+@media all and (max-width: 1270px) {
+  .step-section__blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "a b"
+      "c d"
+      "e f"
+      "g g";
+  }
+}
+
+.step-section__slider {
+  position: relative;
+}
+
+.step-section__slider:after {
+  content: '';
+  position: absolute;
+  width: 335px;
+  height: 182px;
+  top: -35%;
+  background: url(../../assets/images/steps/plane-min.png) no-repeat;
+  z-index: 1;
+}
+
+.step-section__slider-wrapper {
+  display: flex;
+  column-gap: 20px;
+  overflow-x: scroll;
+}
+
+.step-section__slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.step-section__slide {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  min-width: var(--slide-step-width);
+  align-items: center;
+}
+
+.step-section__btn {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.step-section__btn.disabled {
+  pointer-events: none;
+}
+
+.step-section__btn.disabled circle {
+  fill: #d6d6d6;
+}
+
+.step-section__btn:hover circle {
+  fill: #fbce51;
+  transition: all 140ms ease-in-out;
+}
+
+.step-section__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.step-section__pagination {
+  display: flex;
+  column-gap: 6px;
+  margin: 0 16px;
+}
+
+.step-section__pagination .bullet {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #d9d9d9;
+}
+
+.step-section__pagination .bullet.active {
+  background: #313131;
+}
+
+@media all and (min-width: 865px) {
+  .step-section__slider {
+    display: none;
+  }
+}
+
+@media all and (max-width: 865px) {
+  .step-section__blocks {
+    display: none;
+  }
+
+  .step-section__slide {
+    height: 300px;
+  }
+
+  .step-section__block {
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 0;
+    height: 100%;
+    padding: 62px 20px 0 33px;
+  }
+
+  .step-section__text {
+    font-size: 18px;
+  }
+
+  .step-section__point {
+    display: flex;
+    column-gap: 28px;
+  }
+
+  .step-section__number {
+    width: fit-content;
+  }
+
+  .step-section__slider {
+    max-width: 335px;
+    margin: 148px auto 0 auto;
+  }
+
+  .step-section__title {
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  .step-section__title span {
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+}

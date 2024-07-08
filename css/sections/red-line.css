@@ -1,0 +1,59 @@
+.red-line {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0;
+  background: #f54932;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  z-index: 2;
+}
+
+.red-line__scroller {
+  max-width: 100%;
+}
+
+.red-line__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.red-line__scroller[data-animated="true"] {
+  overflow: hidden;
+}
+
+.red-line__scroller[data-animated="true"] .red-line__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.red-line__scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.red-line__scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.red-line__scroller[data-speed="fast"] {
+  --_animation-duration: 30s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+@media all and (max-width: 768px) {
+  .red-line {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}

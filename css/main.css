@@ -1,0 +1,13 @@
+@import "fonts.css";
+@import "normalize.css";
+@import "./sections/red-line.css";
+
+@import "header.css";
+@import "footer.css";
+
+/* Sections */
+
+@import "./sections/hero-section.css";
+@import "./sections/events-section.css";
+@import "./sections/step-section.css";
+@import "./sections/members-section.css";

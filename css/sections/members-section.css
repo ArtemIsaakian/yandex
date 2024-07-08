@@ -1,0 +1,139 @@
+.members-section {
+  margin: 200px 0 140px 0;
+}
+
+.members-section__navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.members-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.members-section__counter {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #313131;
+}
+
+.members-section__total-num {
+  opacity: 0.6;
+}
+
+.members-section__btn {
+  cursor: pointer;
+}
+
+.members-section__btn.disabled {
+  pointer-events: none;
+}
+
+.members-section__btn.disabled circle {
+  fill: #d6d6d6;
+}
+
+.members-section__btn:hover circle {
+  fill: #fbce51;
+  transition: all 140ms ease-in-out;
+}
+
+.members-section__slider {
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.members-section__slider-wrapper {
+  display: flex;
+  column-gap: 20px;
+  overflow-x: scroll;
+}
+
+.members-section__slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.members-section__slide {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid; */
+  min-width: var(--slide-members-width);
+  align-items: center;
+}
+
+.members-section__img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.members-section__name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #313131;
+  margin-bottom: 6px;
+}
+
+.members-section__position {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #313131;
+  margin-bottom: 20px;
+}
+
+.members-section__more-btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #3057a2;
+  border: 1px solid #3057a2;
+  border-radius: 62px;
+  padding: 12px;
+  transition: all 140ms ease-in-out;
+}
+
+.members-section__more-btn:hover {
+  background: #3057a2;
+  color: #fff;
+}
+
+@media all and (min-width: 865px) {
+  .members-section__navigation-mobile {
+    display: none;
+  }
+}
+
+@media all and (max-width: 865px) {
+  .members-section__navigation {
+    display: none;
+  }
+
+  .members-section__img {
+    max-width: 244px;
+  }
+
+  .members-section__navigation-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .members-section__counter {
+    margin: 0 14px;
+  }
+
+  .members-section {
+    margin: 120px 0 100px 0;
+  }
+}
